@@ -1,11 +1,12 @@
-function range(start, end) {
+function range(start, end, step = 1) {
     if (start > end) {
         throw new RangeError("Start greater than end");
     }
     const range = [];
     let value = start;
     while (value < end) {
-        range.push(value++);
+        range.push(value);
+        value += step;
     }
     return range;
 }
@@ -34,4 +35,9 @@ const bookPageDigitCount = bookPageRange.join("").length;
 // 9 * 1 + (99 -9) * 2 + (x - 99) * 3 = 1989
 // x = 699 pages
 const bookPageCount = range(1, 700).join("").length;
-console.log(bookPageCount);
+// console.log(bookPageCount);
+
+/* Problem 1.4.9 */
+const naturalSeries100 = range(1, 101);
+const naturalSeries100Sum = naturalSeries100.reduce((a, b) => a + b, 0);
+console.log(naturalSeries100Sum);
