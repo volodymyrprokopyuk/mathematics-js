@@ -39,5 +39,9 @@ const bookPageCount = range(1, 700).join("").length;
 
 /* Problem 1.4.9 */
 const naturalSeries100 = range(1, 101);
-const naturalSeries100Sum = naturalSeries100.reduce((a, b) => a + b, 0);
-console.log(naturalSeries100Sum);
+const naturalSeries100Sum = naturalSeries100.reduce((s, x) => s + x, 0);
+// console.log(naturalSeries100Sum);
+
+/* Problem 1.6.17 */
+const factorial15 = range(1, 16).reduce((p, x) => p * x, 1);
+console.log(factorial15);
