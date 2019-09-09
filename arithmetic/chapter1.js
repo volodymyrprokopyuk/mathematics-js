@@ -44,4 +44,16 @@ const naturalSeries100Sum = naturalSeries100.reduce((s, x) => s + x, 0);
 
 /* Problem 1.6.17 */
 const factorial15 = range(1, 16).reduce((p, x) => p * x, 1);
-console.log(factorial15);
+// console.log(factorial15);
+
+/* Problem 1.10.7 */
+const squares15 = range(1, 16).map(x => [x, x ** 2]);
+// console.log(squares15);
+
+/* Problem 1.10.8 */
+const cubes10 = range(1, 11).map(x => [x, x ** 3]);
+// console.log(cubes10);
+
+/* Problem 1.10.10 */
+const powers2 = range(1, 11).map(p => [2, 2 ** p]);
+console.log(powers2);
