@@ -11,6 +11,23 @@ function range(start, end, step = 1) {
     return range;
 }
 
+function divideWithRemainder(x, y) {
+    quotient = Math.floor(x / y);
+    remainder = x % y;
+    return [quotient, remainder];
+}
+
+function factorial(n) {
+    if (!Number.isInteger(n)) {
+        throw new TypeError("Integer expected");
+    }
+    if (n < 1) {
+        throw new TypeError("Natural number expected");
+    }
+    const factorial = range(1, n + 1).reduce((p, x) => p * x, 1);
+    return factorial;
+}
+
 /* Problem 1.2.11 */
 // [0..9] = 10 digits
 const oneDigitRange = range(0, 10);
@@ -56,4 +73,15 @@ const cubes10 = range(1, 11).map(x => [x, x ** 3]);
 
 /* Problem 1.10.10 */
 const powers2 = range(1, 11).map(p => [2, 2 ** p]);
-console.log(powers2);
+// console.log(powers2);
+
+/* Problem 1.14.3 */
+const quotientAndRemainder = divideWithRemainder(148, 15);
+// console.log(quotientAndRemainder);
+
+/* Problem 1.14.7 */
+const factorial10 = factorial(10);
+const factorial10Remainders = range(2, 11).map((x) => divideWithRemainder(factorial10 + 1, x));
+const factorial10Remainder = divideWithRemainder(factorial10 + 1, 100);
+console.log(factorial10Remainders);
+console.log(factorial10Remainder);
