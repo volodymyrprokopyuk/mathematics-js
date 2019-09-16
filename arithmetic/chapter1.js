@@ -83,5 +83,23 @@ const quotientAndRemainder = divideWithRemainder(148, 15);
 const factorial10 = factorial(10);
 const factorial10Remainders = range(2, 11).map((x) => divideWithRemainder(factorial10 + 1, x));
 const factorial10Remainder = divideWithRemainder(factorial10 + 1, 100);
-console.log(factorial10Remainders);
-console.log(factorial10Remainder);
+// console.log(factorial10Remainders);
+// console.log(factorial10Remainder);
+
+/* Problem 1.19.3 */
+const ninesIn1To100 = range(1, 101)
+    .reduce((s, x) => `${s}${x}`, "").split("")
+    .filter((s) => s === "9").length;
+// console.log(ninesIn1To100);
+
+/* Problem 1.19.4 */
+const digitsIn1To99 = range(1, 100).reduce((s, x) => `${s}${x}`, "").length;
+console.log(digitsIn1To99);
+const threesIn1To99 = range(1, 100)
+    .reduce((s, x) => `${s}${x}`, "").split("")
+    .filter((s) => s === "3").length;
+console.log(threesIn1To99);
+const sumOfDigitsIn1To99 = range(1, 100)
+      .reduce((s, x) => `${s}${x}`, "").split("")
+      .reduce((s, d) => s + parseInt(d, 10), 0);
+console.log(sumOfDigitsIn1To99);
